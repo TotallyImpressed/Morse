@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="onAir_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="onAir_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="966666666fs"></ZoomStartTime>
+      <ZoomEndTime time="1966666667fs"></ZoomEndTime>
+      <Cursor1Time time="1800000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="160"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject type="logic" fp_name="/onAir_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/onAir_tb/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/onAir_tb/bin">
+      <obj_property name="ElementShortName">bin</obj_property>
+      <obj_property name="ObjectShortName">bin</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/onAir_tb/out">
+      <obj_property name="ElementShortName">out</obj_property>
+      <obj_property name="ObjectShortName">out</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider19" type="divider">
+      <obj_property name="label">Local</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/onAir_tb/uut/state">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/onAir_tb/uut/next_state">
+      <obj_property name="ElementShortName">next_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">next_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/onAir_tb/uut/cnt_flag">
+      <obj_property name="ElementShortName">cnt_flag[1:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_flag[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/onAir_tb/uut/cnt_flag">
+      <obj_property name="ElementShortName">cnt_flag[1:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_flag[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/onAir_tb/uut/cnt_point">
+      <obj_property name="ElementShortName">cnt_point[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_point[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/onAir_tb/uut/cnt_space">
+      <obj_property name="ElementShortName">cnt_space[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cnt_space[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
