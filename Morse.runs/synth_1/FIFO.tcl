@@ -29,7 +29,7 @@ set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_output_repo /home/impressed/Documents/FPGA/Morse/Morse.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib /home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/onAir.v
+read_verilog -library xil_defaultlib /home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -41,12 +41,12 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top onAir -part xc7z020clg484-1
+synth_design -top FIFO -part xc7z020clg484-1
 
 
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef onAir.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file onAir_utilization_synth.rpt -pb onAir_utilization_synth.pb"
+write_checkpoint -force -noxdef FIFO.dcp
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file FIFO_utilization_synth.rpt -pb FIFO_utilization_synth.pb"
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
