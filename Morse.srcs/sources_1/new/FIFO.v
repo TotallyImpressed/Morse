@@ -16,83 +16,58 @@ module FIFO #(parameter fifo_size = 256)
     output empty
     );
     // Internal registers
-    reg[fifo_size - 1:0] head, next_head;
-    reg[fifo_size - 1:0] tail, next_tail;
+    reg[fifo_size:0] head, tail; // n-bit counts crossing through the full write/read cycle
     reg[fifo_size - 1:0] mem;
     reg full_reg, empty_reg;
     reg r_data_reg;
-    reg h_cross, t_cross;
     // Write control signal from output
     wire wr_en;
-    // Reset module
+    
+    // Writing data in FIFO
     always @(posedge clk, negedge rst)
     begin
-        if(!rst)
-        begin
-            head <= 'b0;
-            next_head <= 'b0;
-            tail <= 'b0;
-            next_tail <= 'b0;
-            empty_reg <= 1'b1;
-            full_reg <= 1'b0;
-        end
-    end
-    // Writing data in FIFO by using head pointer
-    always @(posedge clk)
+    if(!rst) tail <= 'b0;
+    else
+    begin 
         if(wr_en) 
-        begin
-            mem[tail] <= wr_data;
-            tail <= tail +'b1;
-        end
+            begin
+                mem[tail] <= wr_data;
+                tail <= tail +'b1;
+            end
+        end        
+    end
     
     assign wr_en = wr & ~full_reg;
     // Reading data from FIFO
-    always @(posedge clk)
+    always @(posedge clk, negedge rst)
     begin
-        if(~empty_reg)
+        if(!rst) head <= 'b0;
+        else
         begin
-            r_data_reg = mem[head];
-            head <= head + 'b1;
+            if(~empty_reg)
+            begin
+                r_data_reg = mem[head];
+                head <= head + 'b1;
+            end
         end
     end
     assign r_data = r_data_reg;
-   
-    // Next pointer logic
-    always @(*)
-    begin
-        next_tail = tail + 'b1;
-        next_head = head + 'b1;
-    end
-    
-    always @(*)
-    begin
-        if((next_head == 0) & (head == fifo_size - 1))
-            h_cross <= 1'b1;
-    end
-    
-    always @(*)
-    begin
-        if((next_tail == 0) & (tail == fifo_size - 1))
-            h_cross <= 1'b1;
-    end
-    
-    always @(posedge clk)
-    begin
-        if((h_cross > t_cross) & (tail == head))
-        begin
-            full_reg <= 1'b1;
-            empty_reg <= 1'b0;
-        end
-        else if((h_cross == t_cross) & (tail == head))
-        begin
-            empty_reg <= 1'b1;
-            full_reg <= 1'b0;
-        end
-        else
-        begin
-            empty_reg <= 1'b0;
-            full_reg <= 1'b0;
-        end
-    end
+    // Full state logic
+    always @(posedge clk, negedge rst)
+    if(!rst) full_reg <= 1'b0;
+    else if((head[fifo_size - 1:0] != tail[fifo_size - 1:0]) & (head[fifo_size] == tail[fifo_size]))
+        full_reg <= 1'b1;
+    else
+        full_reg <= 1'b0;
+    // Empty state logic    
+    always @(posedge clk, negedge rst)
+    if(!rst) empty_reg <= 1'b0;
+    else if((head[fifo_size - 1:0] == tail[fifo_size - 1:0]) & (head[fifo_size] == tail[fifo_size]))
+        empty_reg <= 1'b1;
+    else
+        empty_reg <= 1'b0;
+        
+    assign empty = empty_reg;
+    assign full = full_reg;
      
 endmodule
