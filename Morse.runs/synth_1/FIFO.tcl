@@ -29,7 +29,10 @@ set_property target_language Verilog [current_project]
 set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
 set_property ip_output_repo /home/impressed/Documents/FPGA/Morse/Morse.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib /home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v
+read_verilog -library xil_defaultlib {
+  /home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v
+  /home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/onAir.v
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

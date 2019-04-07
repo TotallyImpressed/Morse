@@ -14,36 +14,30 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 7860 
+INFO: Helper process launched with PID 29659 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1389.102 ; gain = 0.000 ; free physical = 1146 ; free virtual = 5493
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1361.840 ; gain = 0.000 ; free physical = 598 ; free virtual = 4979
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'FIFO' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:9]
-	Parameter fifo_size bound to: 256 - type: integer 
-WARNING: [Synth 8-3848] Net t_cross in module/entity FIFO does not have driver. [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:24]
-WARNING: [Synth 8-3848] Net full in module/entity FIFO does not have driver. [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:15]
-WARNING: [Synth 8-3848] Net empty in module/entity FIFO does not have driver. [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:16]
+	Parameter fifo_size bound to: 5 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:59]
 INFO: [Synth 8-6155] done synthesizing module 'FIFO' (1#1) [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:9]
-WARNING: [Synth 8-3331] design FIFO has unconnected port full
-WARNING: [Synth 8-3331] design FIFO has unconnected port empty
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1406.488 ; gain = 17.387 ; free physical = 1156 ; free virtual = 5503
+Finished Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1406.477 ; gain = 44.637 ; free physical = 609 ; free virtual = 4990
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1406.488 ; gain = 17.387 ; free physical = 1156 ; free virtual = 5503
+Finished Constraint Validation : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1406.477 ; gain = 44.637 ; free physical = 610 ; free virtual = 4991
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1414.492 ; gain = 25.391 ; free physical = 1156 ; free virtual = 5503
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1414.480 ; gain = 52.641 ; free physical = 610 ; free virtual = 4991
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg484-1
-WARNING: [Synth 8-327] inferring latch for variable 'h_cross_reg' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:76]
-WARNING: [Synth 8-327] inferring latch for variable 'h_cross_reg' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:70]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1422.500 ; gain = 33.398 ; free physical = 1147 ; free virtual = 5494
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1422.488 ; gain = 60.648 ; free physical = 601 ; free virtual = 4983
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -57,12 +51,14 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    256 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
 +---Registers : 
-	              256 Bit    Registers := 3     
-	                1 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input    256 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -73,12 +69,14 @@ Hierarchical RTL Component report
 Module FIFO 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input    256 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 2     
 +---Registers : 
-	              256 Bit    Registers := 3     
-	                1 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   2 Input    256 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -96,317 +94,8 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design FIFO has unconnected port full
-WARNING: [Synth 8-3331] design FIFO has unconnected port empty
-INFO: [Synth 8-3886] merging instance 'mem_reg[255]' (FDE) to 'mem_reg[254]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[254]' (FDE) to 'mem_reg[253]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[253]' (FDE) to 'mem_reg[252]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[252]' (FDE) to 'mem_reg[251]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[251]' (FDE) to 'mem_reg[250]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[250]' (FDE) to 'mem_reg[249]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[249]' (FDE) to 'mem_reg[248]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[248]' (FDE) to 'mem_reg[247]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[247]' (FDE) to 'mem_reg[246]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[246]' (FDE) to 'mem_reg[245]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[245]' (FDE) to 'mem_reg[244]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[244]' (FDE) to 'mem_reg[243]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[243]' (FDE) to 'mem_reg[242]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[242]' (FDE) to 'mem_reg[241]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[241]' (FDE) to 'mem_reg[240]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[240]' (FDE) to 'mem_reg[239]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[239]' (FDE) to 'mem_reg[238]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[238]' (FDE) to 'mem_reg[237]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[237]' (FDE) to 'mem_reg[236]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[236]' (FDE) to 'mem_reg[235]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[235]' (FDE) to 'mem_reg[234]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[234]' (FDE) to 'mem_reg[233]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[233]' (FDE) to 'mem_reg[232]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[232]' (FDE) to 'mem_reg[231]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[231]' (FDE) to 'mem_reg[230]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[230]' (FDE) to 'mem_reg[229]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[229]' (FDE) to 'mem_reg[228]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[228]' (FDE) to 'mem_reg[227]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[227]' (FDE) to 'mem_reg[226]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[226]' (FDE) to 'mem_reg[225]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[225]' (FDE) to 'mem_reg[224]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[224]' (FDE) to 'mem_reg[223]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[223]' (FDE) to 'mem_reg[222]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[222]' (FDE) to 'mem_reg[221]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[221]' (FDE) to 'mem_reg[220]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[220]' (FDE) to 'mem_reg[219]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[219]' (FDE) to 'mem_reg[218]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[218]' (FDE) to 'mem_reg[217]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[217]' (FDE) to 'mem_reg[216]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[216]' (FDE) to 'mem_reg[215]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[215]' (FDE) to 'mem_reg[214]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[214]' (FDE) to 'mem_reg[213]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[213]' (FDE) to 'mem_reg[212]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[212]' (FDE) to 'mem_reg[211]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[211]' (FDE) to 'mem_reg[210]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[210]' (FDE) to 'mem_reg[209]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[209]' (FDE) to 'mem_reg[208]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[208]' (FDE) to 'mem_reg[207]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[207]' (FDE) to 'mem_reg[206]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[206]' (FDE) to 'mem_reg[205]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[205]' (FDE) to 'mem_reg[204]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[204]' (FDE) to 'mem_reg[203]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[203]' (FDE) to 'mem_reg[202]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[202]' (FDE) to 'mem_reg[201]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[201]' (FDE) to 'mem_reg[200]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[200]' (FDE) to 'mem_reg[199]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[199]' (FDE) to 'mem_reg[198]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[198]' (FDE) to 'mem_reg[197]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[197]' (FDE) to 'mem_reg[196]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[196]' (FDE) to 'mem_reg[195]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[195]' (FDE) to 'mem_reg[194]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[194]' (FDE) to 'mem_reg[193]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[193]' (FDE) to 'mem_reg[192]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[192]' (FDE) to 'mem_reg[191]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[191]' (FDE) to 'mem_reg[190]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[190]' (FDE) to 'mem_reg[189]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[189]' (FDE) to 'mem_reg[188]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[188]' (FDE) to 'mem_reg[187]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[187]' (FDE) to 'mem_reg[186]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[186]' (FDE) to 'mem_reg[185]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[185]' (FDE) to 'mem_reg[184]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[184]' (FDE) to 'mem_reg[183]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[183]' (FDE) to 'mem_reg[182]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[182]' (FDE) to 'mem_reg[181]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[181]' (FDE) to 'mem_reg[180]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[180]' (FDE) to 'mem_reg[179]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[179]' (FDE) to 'mem_reg[178]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[178]' (FDE) to 'mem_reg[177]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[177]' (FDE) to 'mem_reg[176]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[176]' (FDE) to 'mem_reg[175]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[175]' (FDE) to 'mem_reg[174]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[174]' (FDE) to 'mem_reg[173]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[173]' (FDE) to 'mem_reg[172]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[172]' (FDE) to 'mem_reg[171]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[171]' (FDE) to 'mem_reg[170]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[170]' (FDE) to 'mem_reg[169]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[169]' (FDE) to 'mem_reg[168]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[168]' (FDE) to 'mem_reg[167]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[167]' (FDE) to 'mem_reg[166]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[166]' (FDE) to 'mem_reg[165]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[165]' (FDE) to 'mem_reg[164]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[164]' (FDE) to 'mem_reg[163]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[163]' (FDE) to 'mem_reg[162]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[162]' (FDE) to 'mem_reg[161]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[161]' (FDE) to 'mem_reg[160]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[160]' (FDE) to 'mem_reg[159]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[159]' (FDE) to 'mem_reg[158]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[158]' (FDE) to 'mem_reg[157]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[157]' (FDE) to 'mem_reg[156]'
-INFO: [Synth 8-3886] merging instance 'mem_reg[156]' (FDE) to 'mem_reg[155]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\mem_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (r_data_reg_reg)
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'empty_reg_reg__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:36]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'VCC' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:36]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:36]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[255]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[254]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[253]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[252]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[251]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[250]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[249]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[248]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[247]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[246]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[245]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[244]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[243]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[242]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[241]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[240]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[239]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[238]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[237]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[236]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[235]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[234]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[233]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[232]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[231]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[230]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[229]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[228]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[227]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[226]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[225]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[224]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[223]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[222]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[221]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[220]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[219]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[218]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[217]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[216]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[215]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[214]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[213]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[212]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[211]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[210]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[209]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[208]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'head_reg[207]__0/Q' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/impressed/Documents/FPGA/Morse/Morse.srcs/sources_1/new/FIFO.v:32]
-INFO: [Common 17-14] Message 'Synth 8-6858' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-WARNING: [Synth 8-3332] Sequential element (h_cross_reg) is unused and will be removed from module FIFO.
-WARNING: [Synth 8-3332] Sequential element (h_cross_reg__0) is unused and will be removed from module FIFO.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1536.211 ; gain = 147.109 ; free physical = 981 ; free virtual = 5329
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 425 ; free virtual = 4807
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -419,7 +108,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1536.211 ; gain = 147.109 ; free physical = 981 ; free virtual = 5329
+Finished Timing Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 424 ; free virtual = 4806
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -431,7 +120,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 981 ; free virtual = 5328
+Finished Technology Mapping : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 423 ; free virtual = 4806
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -455,7 +144,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
+Finished IO Insertion : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 423 ; free virtual = 4806
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -468,7 +157,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 423 ; free virtual = 4806
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -480,25 +169,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 423 ; free virtual = 4806
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 423 ; free virtual = 4806
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 423 ; free virtual = 4806
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 423 ; free virtual = 4806
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -511,39 +200,47 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |OBUF  |     1|
-|2     |OBUFT |     2|
-+------+------+------+
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     3|
+|3     |LUT2 |     4|
+|4     |LUT3 |    10|
+|5     |LUT4 |     3|
+|6     |LUT5 |     5|
+|7     |LUT6 |    11|
+|8     |FDRE |    19|
+|9     |IBUF |     5|
+|10    |OBUF |     3|
++------+-----+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |     3|
+|1     |top      |       |    64|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 423 ; free virtual = 4806
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 3078 critical warnings and 11 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.227 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
-Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1545.234 ; gain = 156.125 ; free physical = 978 ; free virtual = 5326
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.488 ; gain = 198.648 ; free physical = 425 ; free virtual = 4807
+Synthesis Optimization Complete : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1560.496 ; gain = 198.648 ; free physical = 425 ; free virtual = 4807
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1631.258 ; gain = 0.000 ; free physical = 888 ; free virtual = 5236
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1664.500 ; gain = 0.000 ; free physical = 338 ; free virtual = 4720
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-114 Infos, 11 Warnings, 200 Critical Warnings and 0 Errors encountered.
+10 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1631.258 ; gain = 242.270 ; free physical = 945 ; free virtual = 5292
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1631.258 ; gain = 0.000 ; free physical = 945 ; free virtual = 5292
+synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1664.500 ; gain = 302.773 ; free physical = 396 ; free virtual = 4778
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1664.500 ; gain = 0.000 ; free physical = 396 ; free virtual = 4778
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/impressed/Documents/FPGA/Morse/Morse.runs/synth_1/FIFO.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file FIFO_utilization_synth.rpt -pb FIFO_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 18 22:39:39 2019...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  7 19:14:10 2019...

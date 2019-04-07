@@ -6,66 +6,83 @@
 // Description: FIFO buffer storing symbols or words sent from MCU
 //////////////////////////////////////////////////////////////////////////////////
 
-module FIFO #(parameter fifo_size = 256)
+module FIFO #(parameter address_size = 5)
     (
     input clk, rst,
-    input wr,
+    input wr, rd,
     input wr_data,
     output r_data,
     output full,
     output empty
     );
+    
+    localparam N = 2 ** address_size;
+    
     // Internal registers
-    reg[fifo_size:0] head, tail; // n-bit counts crossing through the full write/read cycle
-    reg[fifo_size - 1:0] mem;
+    reg[N:0] head, tail; // "fifo_size"-bit counter considering full write/read cycle
+    reg[N:0] next_head, next_tail;
+    reg[N - 1:0] mem;
     reg full_reg, empty_reg;
-    reg r_data_reg;
+    reg next_full_reg, next_empty_reg;
     // Write control signal from output
     wire wr_en;
     
-    // Writing data in FIFO
-    always @(posedge clk, negedge rst)
+    // FIFO controller logic
+    always @(posedge clk)
+    if(!rst)
     begin
-    if(!rst) tail <= 'b0;
+        tail <= 'b0;
+        head <= 'b0;
+        full_reg <= 1'b0;
+        empty_reg <= 1'b1;
+    end
     else
-    begin 
-        if(wr_en) 
-            begin
-                mem[tail] <= wr_data;
-                tail <= tail +'b1;
-            end
-        end        
+    begin
+        tail <= next_tail;
+        head <= next_head;
+        full_reg <= next_full_reg;
+        empty_reg <= next_empty_reg;
     end
     
+    // Write to the mem register
+    always @(posedge clk)
+        if(wr_en)
+            mem[head] <= wr_data;
+    
+    assign r_data = mem[tail];
     assign wr_en = wr & ~full_reg;
-    // Reading data from FIFO
-    always @(posedge clk, negedge rst)
+    
+    // Next-state logic
+    always @(*)
     begin
-        if(!rst) head <= 'b0;
-        else
-        begin
-            if(~empty_reg)
-            begin
-                r_data_reg = mem[head];
-                head <= head + 'b1;
-            end
-        end
-    end
-    assign r_data = r_data_reg;
-    // Full state logic
-    always @(posedge clk, negedge rst)
-    if(!rst) full_reg <= 1'b0;
-    else if((head[fifo_size - 1:0] != tail[fifo_size - 1:0]) & (head[fifo_size] == tail[fifo_size]))
-        full_reg <= 1'b1;
-    else
-        full_reg <= 1'b0;
-    // Empty state logic    
-    always @(posedge clk, negedge rst)
-    if(!rst) empty_reg <= 1'b0;
-    else if((head[fifo_size - 1:0] == tail[fifo_size - 1:0]) & (head[fifo_size] == tail[fifo_size]))
-        empty_reg <= 1'b1;
-    else
-        empty_reg <= 1'b0;
+        next_tail = tail;
+        next_head = head;
+        next_empty_reg = empty_reg;
+        next_full_reg = full_reg;
+        case({wr,rd})
+            2'b01:
+                if(~empty_reg)
+                begin
+                    next_tail = next_tail + 32'b1;
+                    next_full_reg = 1'b0;
+                    if((head[N - 1:0] == tail[N - 1:0]) & (head[N] == tail[N]))
+                        next_empty_reg = 1'b1;
+                end 
+            2'b10:
+                if(~full_reg)
+                begin
+                    next_head = next_head + 32'b1;
+                    next_empty_reg = 1'b0;
+                    if((head[N - 1:0] == tail[N - 1:0]) & (head[N] != tail[N]))
+                        next_full_reg = 1'b1;
+                end 
+            2'b11:
+                begin
+                    next_tail = next_tail + 32'b1;
+                    next_head = next_head + 32'b1;
+                end
+        endcase
+    end 
         
     assign empty = empty_reg;
     assign full = full_reg;
